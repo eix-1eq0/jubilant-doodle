@@ -114,8 +114,10 @@ func main() {
 		for {
 			os.Stdin.Read(b)
 			if string(b) == " " {
+				dt := time.Now()
 				fmt.Println(count, "Total time: ", formattedTime(total),
-					" Lap: ", formattedTime(total-last))
+					" Lap: ", formattedTime(total-last),
+					    dt.Format("(2006-02-01 15:04:06)"))
 				count++
 				last = total
 			}
